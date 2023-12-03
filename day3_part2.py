@@ -22,11 +22,11 @@ def process(grid, gear_box, num, i:int , j:int) -> bool:
             not grid[y][x].isnumeric() and 
             grid[y][x] != '.'):
             if grid[y][x] == '*':
-                if (y,x) not in gear_box:
-                    gear_box[(y,x)] = [1, num]
-                else:
-                    gear_box[(y,x)][0] += 1
-                    gear_box[(y,x)][1] *= num
+
+                gear = gear_box.setdefault((y,x), [0,1])
+                gear[0] += 1
+                gear[1] *= num
+
             found_symbol = True
 
     return found_symbol 
