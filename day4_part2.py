@@ -16,23 +16,23 @@ for row in input:
     owned_nums.append(temp[1].strip().split())
 
 @cache
-def process(row):
-    w,o  = cards[row]
+def process(card):
+    w,o  = cards[card]
     wins = len(set(w) & set(o))
     
-    return list(range(row+1,row+wins+1,1))
+    return list(range(card+1,card+wins+1,1))
     
 cards = list(zip(winning_nums, owned_nums))
-done = []
+total_cards = 0
 queue = deque()
 
 for i in range(len(cards)):
     queue.append(i)
 
 while queue:
-    process_row = queue.popleft()
-    done.append(process_row)
-    need_to_be_processed = process(process_row)
+    card = queue.popleft()
+    total_cards += 1
+    need_to_be_processed = process(card)
     queue.extend(need_to_be_processed)
 
-print(len(done))
+print(total_cards)
