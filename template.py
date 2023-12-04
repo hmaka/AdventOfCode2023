@@ -2,8 +2,6 @@
 input_file = open("input.txt", 'r')
 # Read the file into a list where every element is a line from the file in order.
 # The lines are stored as strings.
-input = input_file.readlines()
+input = input_file.read().strip().split('\n')
 # Close the file before we start solving.
 input_file.close()
-
-
