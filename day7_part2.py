@@ -26,7 +26,6 @@ for i in range(len(input)):
     hand,bid = input[i]
     input[i] = (list(hand),bid)
 
-
 def compare(line1, line2):
     a = line1[0]
     b = line2[0]
