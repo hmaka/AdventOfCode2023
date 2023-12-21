@@ -59,4 +59,3 @@ for start_galaxy in galaxy_locations:
         ans += distance
 
 print(ans)
-        
