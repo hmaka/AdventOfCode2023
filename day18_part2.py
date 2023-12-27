@@ -17,7 +17,7 @@ for line in input:
     print(hex)
     dir = int(hex[-1])
     dist = int(hex[:-1],16)
-    dir,dist = directions["RDLU"[dir]],dist
+    dir = directions["RDLU"[dir]]
     y,x = verts[-1]
     boundary_points += dist
     next = (y + dir[0]*dist, x + dir[1]*dist)
